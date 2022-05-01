@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+</head>
+
+<body>
+    <h1>All Orders</h1>
+    <div>
+        <a href="/orders/new">Add Campground</a>
+    </div>
+    <ul>
+        <% for (let order of orders){%>
+            <li><a href="/orders/<%= order._id %>">
+                    <p>
+                        <%= order.destination %>
+                            <%= order.customer %>
+                                <%= order.deliveryAgent %>
+                    </p>
+                </a></li>
+            <% }%>
+    </ul>
+
+</body>
+
+</html>

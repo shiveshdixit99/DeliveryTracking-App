@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+
+<body>
+    <h1>
+        <%= order.destination %>
+    </h1>
+    <h2>
+        <%= order.cutomer %>
+    </h2>
+    <h2>
+        <%= order.deliveryAgent %>
+    </h2>
+    <p> <a href="/orders/<%=order._id%>/edit">Edit</a>
+    </p>
+
+    <footer>
+        <a href="/orders">All Orders</a>
+    </footer>
+</body>
+
+</html>
