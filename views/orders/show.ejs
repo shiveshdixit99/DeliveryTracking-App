@@ -12,11 +12,23 @@
         <%= order.destination %>
     </h1>
     <h2>
-        <%= order.cutomer %>
+        <%= order.customer %>
     </h2>
     <h2>
         <%= order.deliveryAgent %>
     </h2>
+    <h3>
+        <ul>
+            <% for (let i=0;i<order.location.length;i++){%>
+                <li>
+                    <p>
+                        <%= order.location[i] %>
+                            <%= order.Dtime[i] %>
+                    </p>
+                </li>
+                <% }%>
+        </ul>
+    </h3>
     <p> <a href="/orders/<%=order._id%>/edit">Edit</a>
     </p>
 

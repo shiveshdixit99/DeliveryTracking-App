@@ -11,16 +11,12 @@
     <h1>Edit Order</h1>
     <form action="/orders/<%=order._id%>?_method=PUT" method="POST">
         <div>
-            <label for="destination">Destination</label>
-            <input type="text" id="destination" name="order[destination]" value="<%=order.destination %>">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="order[location]">
         </div>
         <div>
-            <label for="customer">Customer</label>
-            <input type="text" id="customer" name="order[customer]" value="<%= order.customer%>">
-        </div>
-        <div>
-            <label for="deliveryAgent">Delivery Agent</label>
-            <input type="text" id="deliveryAgent" name="order[deliveryAgent]" value="<%= order.deliveryAgent%>">
+            <label for="Dtime">Delivery Time</label>
+            <input type="text" id="Dtime" name="order[Dtime]">
         </div>
         <button>Update Order</button>
     </form>

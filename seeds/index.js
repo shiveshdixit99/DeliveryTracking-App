@@ -19,7 +19,8 @@ const seedDB = async () => {
 
     const ord = new Order({
         destination: `Lucknow`,
-        customer: `Ramesh`, deliveryAgent: `Shyam`
+        customer: `Ramesh`, deliveryAgent: `Shyam`,
+        location: ["lucknow"], Dtime: ["5:00 AM"]
     });
 
     await ord.save();

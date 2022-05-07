@@ -40,7 +40,8 @@ app.get('/orders/new', (req, res) => {
 
 app.post('/orders', async (req, res) => {
     const order = new Order(req.body.order);
-    //res.send(order);
+    //res.send(req.body.order);
+    // res.send(order);
     await order.save();
     res.redirect(`/orders/${order._id}`)
 })
@@ -59,7 +60,15 @@ app.get('/orders/:id/edit', async (req, res) => {
 
 app.put('/orders/:id', async (req, res) => {
     const { id } = req.params;
-    const order = await Order.findByIdAndUpdate(id, { ...req.body.order });
+    let order = await Order.findById(id);
+    //res.send(order);
+    const { location, Dtime } = req.body.order;
+    order.location.push(location);
+    // order.location.push("gkp");
+    //order.Dtime.push("12");
+    order.Dtime.push(Dtime);
+    //res.send(order);
+    order = await Order.findByIdAndUpdate(id, order);
     res.redirect(`/orders/${order._id}`)
 });
 
